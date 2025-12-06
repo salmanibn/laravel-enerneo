@@ -30,6 +30,10 @@
     </div>
 </div>
 
+<footer style="width:100vw;background:#181818;color:#fff;text-align:center;padding:1rem 0;position:fixed;bottom:0;left:0;z-index:99;box-shadow:0 -2px 8px rgba(0,0,0,0.08);">
+    &copy; {{ date('Y') }} EnerNeo. All rights reserved.
+</footer>
+
 @section('footer')
 <footer style="width:100%;background:#181818;color:#fff;text-align:center;padding:1rem 0;position:fixed;bottom:0;left:0;z-index:99;">
     &copy; {{ date('Y') }} EnerNeo Monitoring. All rights reserved.
