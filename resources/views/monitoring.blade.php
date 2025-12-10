@@ -39,12 +39,13 @@ body {
 	text-align: center;
 	transition: all 0.3s ease;
 	animation: scaleIn 0.5s ease-out;
-	max-width: 500px;
+	max-width: 350px;
 	margin: 0 auto;
+	height: 200px;
 }
 .gauge-card h3 {
 	color: #4CC9FF;
-	font-size: 18px;
+	font-size: 30px;
 	margin-bottom: 15px;
 	font-weight: 600;
 }
@@ -56,9 +57,9 @@ body {
 	margin: 0 auto 10px auto;
 }
 .gauge-value {
-	font-size: 24px;
+	font-size: 40px;
 	font-weight: bold;
-	color: #fff;
+	color: #ffffff;
 	margin: 10px 0;
 	text-shadow: 0 0 10px rgba(76,201,255,0.5);
 }
@@ -77,7 +78,7 @@ body {
 	animation: slideUp 0.6s ease-out;
 	box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 	transition: all 0.3s ease;
-	max-width: 500px;
+	max-width: 600px;
 	margin: 0 auto;
 }
 .chart-card h3 {
@@ -117,77 +118,96 @@ body {
 	<div class="monitoring-header">
 		<h1>EnerNeo Monitoring</h1>
 	</div>
-	<div class="gauge-grid mb-5">
-		<div class="gauge-card">
-			<h3>Load Voltage</h3>
-			<div class="gauge-canvas-container"><div id="gaugeLoadVoltage"></div></div>
+	<div class="chart-gauge-block" style="margin-bottom: 40px; border: 2px solid #4CC9FF; border-radius: 15px; padding: 18px; background: rgba(255,255,255,0.03);">
+	<h2 style="color:#4CC9FF; margin-bottom:18px;">LOAD</h2>
+	<div class="chart-card" style="max-width:1200px; margin:0 auto;">
+			<h3>Load</h3>
+			<canvas id="chartLoad" style="width:100%;height:350px;min-height:300px;"></canvas>
 		</div>
-		<div class="gauge-card">
-			<h3>Load Current</h3>
-			<div class="gauge-canvas-container"><div id="gaugeLoadCurrent"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>Load Power</h3>
-			<div class="gauge-canvas-container"><div id="gaugeLoadPower"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>Load Energy</h3>
-			<div class="gauge-canvas-container"><div id="gaugeLoadEnergy"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>Load Frequency</h3>
-			<div class="gauge-canvas-container"><div id="gaugeLoadFrequency"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>Load Power Factor</h3>
-			<div class="gauge-canvas-container"><div id="gaugeLoadPF"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>PV Voltage</h3>
-			<div class="gauge-canvas-container"><div id="gaugePVVoltage"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>PV Current</h3>
-			<div class="gauge-canvas-container"><div id="gaugePVCurrent"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>PV Power</h3>
-			<div class="gauge-canvas-container"><div id="gaugePVPower"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>PV Energy</h3>
-			<div class="gauge-canvas-container"><div id="gaugePVEnergy"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>Batt Voltage</h3>
-			<div class="gauge-canvas-container"><div id="gaugeBattVoltage"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>Batt Current</h3>
-			<div class="gauge-canvas-container"><div id="gaugeBattCurrent"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>Batt Power</h3>
-			<div class="gauge-canvas-container"><div id="gaugeBattPower"></div></div>
-		</div>
-		<div class="gauge-card">
-			<h3>Batt Energy</h3>
-			<div class="gauge-canvas-container"><div id="gaugeBattEnergy"></div></div>
+		<div class="gauge-group" style="margin-top: 18px; border-radius: 15px; padding: 16px;">
+			<div class="gauge-grid">
+				<div class="gauge-card">
+					<h3>Load Voltage</h3>
+					<div class="gauge-canvas-container"><div id="gaugeLoadVoltage"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>Load Current</h3>
+					<div class="gauge-canvas-container"><div id="gaugeLoadCurrent"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>Load Power</h3>
+					<div class="gauge-canvas-container"><div id="gaugeLoadPower"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>Load Energy</h3>
+					<div class="gauge-canvas-container"><div id="gaugeLoadEnergy"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>Load Frequency</h3>
+					<div class="gauge-canvas-container"><div id="gaugeLoadFrequency"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>Load Power Factor</h3>
+					<div class="gauge-canvas-container"><div id="gaugeLoadPF"></div></div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="chart-container">
-		<div class="chart-card">
-			<h3>Load</h3>
-			<canvas id="chartLoad"></canvas>
+	<div class="chart-gauge-block" style="margin-bottom: 40px; border: 2px solid #4CC9FF; border-radius: 15px; padding: 18px; background: rgba(255,255,255,0.03);">
+	<h2 style="color:#43e97b; margin-bottom:18px;">PV</h2>
+	<div class="chart-card" style="max-width:1200px; margin:0 auto;">
+			<canvas id="chartPV" style="width:100%;height:350px;min-height:300px;"></canvas>
 		</div>
-		<div class="chart-card">
-			<h3>PV</h3>
-			<canvas id="chartPV"></canvas>
+		<div class="gauge-group" style="margin-top: 18px; padding: 16px;">
+
+			<div class="gauge-grid">
+				<div class="gauge-card">
+					<h3>PV Voltage</h3>
+					<div class="gauge-canvas-container"><div id="gaugePVVoltage"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>PV Current</h3>
+					<div class="gauge-canvas-container"><div id="gaugePVCurrent"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>PV Power</h3>
+					<div class="gauge-canvas-container"><div id="gaugePVPower"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>PV Energy</h3>
+					<div class="gauge-canvas-container"><div id="gaugePVEnergy"></div></div>
+				</div>
+			</div>
 		</div>
-		<div class="chart-card">
-			<h3>Battery</h3>
-			<canvas id="chartBatt"></canvas>
+	</div>
+	<div class="chart-gauge-block" style="margin-bottom: 40px; border: 2px solid #4CC9FF; border-radius: 15px; padding: 18px; background: rgba(255,255,255,0.03);">
+			<h2 style="color:#ffb347; margin-bottom:18px;">BATTERY</h2>
+	<div class="chart-card" style="max-width:1200px; margin:0 auto;">
+			<canvas id="chartBatt" style="width:100%;height:350px;min-height:300px;"></canvas>
 		</div>
+		<div class="gauge-group" style="margin-top: 18px; padding: 16px;">
+
+			<div class="gauge-grid">
+				<div class="gauge-card">
+					<h3>Batt Voltage</h3>
+					<div class="gauge-canvas-container"><div id="gaugeBattVoltage"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>Batt Current</h3>
+					<div class="gauge-canvas-container"><div id="gaugeBattCurrent"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>Batt Power</h3>
+					<div class="gauge-canvas-container"><div id="gaugeBattPower"></div></div>
+				</div>
+				<div class="gauge-card">
+					<h3>Batt Energy</h3>
+					<div class="gauge-canvas-container"><div id="gaugeBattEnergy"></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	</div>
 </div>
 @endsection
